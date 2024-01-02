@@ -2,47 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d54b1c0-87a9-4455-9401-0a3bbf861c81" name="Changes" comment="readme">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kasi.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.rspec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rakefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/kasi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/setup" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kasi.gemspec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kasi.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kasi/version.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/.github/workflows/ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/.reek.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/.rubocop.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/Gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/Procfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/Procfile.dev" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/application.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/database/database.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/dev" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/devise/support/devise.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/errors/errors_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/errors/internal_server_error.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/errors/not_found.html.slim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/sidekiq.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/support/factory_bot.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/support/shoulda_matchers.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/support/time_helpers.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/support/vcr.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/support/view_component.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/tasks/auto_annotate_routes.rake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/configurations/tasks/tailwind.rake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/template/template.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sig/kasi.rbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/kasi_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1703927693935</updated>
       <workItem from="1703927702189" duration="4860000" />
-      <workItem from="1704174860608" duration="8662000" />
+      <workItem from="1704174860608" duration="8907000" />
     </task>
     <task id="LOCAL-00001" summary="readme">
       <created>1703932861255</created>
