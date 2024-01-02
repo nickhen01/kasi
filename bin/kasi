@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+#
+# TEMPLATE_PATH = "../lib/template/template.rb".freeze
+#
+# app_name = ARGV[1]
+#
+# if ARGV[0] == 'new' && !app_name.nil?
+#   system("rails new #{app_name} --database=postgresql --skip-test -m #{TEMPLATE_PATH}")
+# else
+#   puts "Usage: kasi new APP_NAME"
+# end
+
+require 'kasi'
+require 'rails/command'
+
+TEMPLATE_PATH = "#{__dir__}/../lib/template/template.rb".freeze
+DEFAULT_OPTIONS = [
+  '-m', TEMPLATE_PATH,
+  '--database', 'postgresql',
+  '--skip-test'
+].freeze
+
+args = ARGV.dup.concat(DEFAULT_OPTIONS)
+
+Rails::Command.invoke('application:application', args)

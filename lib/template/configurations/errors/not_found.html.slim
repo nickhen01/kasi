@@ -1,0 +1,11 @@
+.flex.h-full
+  .flex.flex-col.items-center.m-auto
+    .text-center
+      p.text-lg.sm:text-xl.font-semibold.text-neutral-600.tracking-wide
+        | 404 Error
+      h1.mt-4.text-4xl.font-medium.text-neutral-900.tracking-tight.sm:text-5xl
+        | Page not found.
+      p.mt-4.text-base.text-neutral-500
+        | We couldn’t find the page you were looking for.
+    .mt-12
+      = link_to 'Go back to Homepage', root_url, class: 'text-neutral-600 hover:underline'

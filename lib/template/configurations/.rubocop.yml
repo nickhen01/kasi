@@ -1,0 +1,38 @@
+require: rubocop-rails
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'lib/**/*'
+    - 'node_modules/**/*'
+    - 'script/**/*'
+    - 'support/**/*'
+    - 'tmp/**/*'
+    - 'test/**/*'
+    - "db/migrate/**/*"
+    - "spec/**/*"
+    - "app/helpers/application_helper.rb"
+    - "app/mailers/application_mailer.rb"
+    - "app/models/application_record.rb"
+    - "config/application.rb"
+
+Bundler/OrderedGems:
+  Enabled: false
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - "db/seeds.rb"
+    - "config/environments/*.rb"
+Metrics/AbcSize:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/EmptyMethod:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/SymbolArray:
+  EnforcedStyle: brackets
+Style/WordArray:
+  EnforcedStyle: brackets

@@ -1,0 +1,43 @@
+directories:
+  "app/controllers":
+    IrresponsibleModule:
+      enabled: false
+    NestedIterators:
+      max_allowed_nesting: 2
+    UnusedPrivateMethod:
+      enabled: false
+    InstanceVariableAssumption:
+      enabled: false
+  "app/helpers":
+    IrresponsibleModule:
+      enabled: false
+    UtilityFunction:
+      enabled: false
+  "app/mailers":
+    InstanceVariableAssumption:
+      enabled: false
+  "app/models":
+    InstanceVariableAssumption:
+      enabled: false
+  "app/channels":
+      IrresponsibleModule:
+        enabled: false
+  "app/mailers":
+    IrresponsibleModule:
+      exclude:
+        - ApplicationMailer
+  "app/jobs":
+      IrresponsibleModule:
+        exclude:
+          - ApplicationJob
+  "app/models":
+      IrresponsibleModule:
+        exclude:
+          - ApplicationRecord
+  "app/policies":
+      IrresponsibleModule:
+        exclude:
+          - ApplicationPolicy
+exclude_paths:
+  - db/migrate
+  - config
