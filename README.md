@@ -2,16 +2,6 @@
 
 Accelerate your web development with this field-tested Rails application template.
 
-## Installation
-
-Install the gem and add to the application's Gemfile by executing:
-
-    $ bundle add kasi
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install kasi
-
 ## Usage
 
 
