@@ -76,6 +76,9 @@ generators = <<-RUBY
     generate.assets false
     generate.helper false
     generate.jbuilder false
+    generate.template_engine :slim
+    generate.view_specs false
+    generate.routing_specs false
   end
 RUBY
 environment generators
