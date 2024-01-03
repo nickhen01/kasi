@@ -140,6 +140,7 @@ after_bundle do
 
   # Simple form
   generate('simple_form:install')
+  copy_file 'configurations/scaffold/_form.html.slim', 'lib/templates/slim/scaffold/_form.html.slim'
 
   # Rollbar
   generate('rollbar')
