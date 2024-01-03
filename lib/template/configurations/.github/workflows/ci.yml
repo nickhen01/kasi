@@ -10,10 +10,16 @@ jobs:
 
     env:
       RAILS_ENV: test
+      POSTGRES_HOST: localhost
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
 
     services:
       postgres:
         image: postgres:11
+        env:
+          POSTGRES_USER: ${{ env.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
         ports:
           - 5432:5432
         options: >-
@@ -36,7 +42,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1.2
+          ruby-version: 3.3.0
 
       - name: Setup rails bundle cache
         uses: actions/cache@v2
@@ -55,12 +61,20 @@ jobs:
           bin/rails tailwindcss:build
 
       - name: Setup test database
+        env:
+          RAILS_ENV: ${{ env.RAILS_ENV }}
+          POSTGRES_HOST: ${{ env.POSTGRES_HOST }}
+          POSTGRES_USER: ${{ env.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
         run: |
           bundle exec rake db:create db:migrate
 
       - name: Run tests
         env:
           RAILS_ENV: ${{ env.RAILS_ENV }}
+          POSTGRES_HOST: ${{ env.POSTGRES_HOST }}
+          POSTGRES_USER: ${{ env.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
           REDIS_URL: redis://localhost:6379/0
         run: |
           COVERAGE=true bundle exec rspec --require rails_helper
