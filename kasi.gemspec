@@ -5,7 +5,7 @@ require_relative "lib/kasi/version"
 Gem::Specification.new do |spec|
   spec.name = "kasi"
   spec.version = Kasi::VERSION
-  spec.authors = ["nicolas hennick"]
+  spec.authors = ["Nicolas Hennick"]
   spec.email = ["nicolas@digipeakgroup.com"]
 
   spec.summary = "Field-tested template for your Ruby on Rails projects."

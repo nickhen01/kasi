@@ -256,9 +256,6 @@ require 'pundit/rspec'
   RUBY
   end
 
-  # Database
-  copy_file 'configurations/database/database.yml', 'config/database.yml', force: true
-
   # Git
   ########################################
   git :init
