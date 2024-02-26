@@ -41,5 +41,5 @@ The app is accessible on [http://localhost:5000](http://localhost:5000)
 ### Run tests
 
 ```shell
-rspec
+bundle exec rspec
 ```
