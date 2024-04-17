@@ -2,8 +2,18 @@
 
 Accelerate your web development with this field-tested Rails application template.
 
-## Usage
+## Installation
 
+Clone the repo and install the gem before you can use it.
+
+```bash
+gh repo clone nickhen01/kasi
+cd kasi
+gem install ./kasi-0.1.0.gem
+cd ..
+```
+
+## Usage
 
 ```bash
 kasi new my_app_name
