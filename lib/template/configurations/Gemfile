@@ -5,35 +5,35 @@ ruby '3.3.0'
 # Boot time reduction of approximately 50%
 gem 'bootsnap', require: false
 # Enumerated attributes with I18n and ActiveRecord/Mongoid/MongoMapper support (https://github.com/brainspec/enumerize)
-gem "enumerize", "~> 2.7"
+gem 'enumerize', '~> 2.8', '>= 2.8.1'
 # Simple static page rendering controller (http://github.com/thoughtbot/high_voltage)
 gem 'high_voltage', '~> 3.1', '>= 3.1.2'
 # Embeds an SVG document, inline. (https://github.com/jamesmartin/inline_svg)
 gem 'inline_svg', '~> 1.9'
 # Use ESM with importmap to manage modern JavaScript in Rails without transpiling or bundling. (https://github.com/rails/importmap-rails)
-gem 'importmap-rails', '~> 1.2', '>= 1.2.3'
+gem 'importmap-rails', '~> 2.0', '>= 2.0.1'
 # Create JSON structures via a Builder-style DSL (https://github.com/rails/jbuilder)
 gem 'jbuilder', '~> 2.11', '>= 2.11.5'
 # Pagination Ruby Gem (https://github.com/ddnexus/pagy)
-gem 'pagy', '~> 6.2'
+gem 'pagy', '~> 8.2', '>= 8.2.2'
 # Pg is the Ruby interface to the PostgreSQL RDBMS (https://github.com/ged/ruby-pg)
-gem 'pg', '~> 1.5', '>= 1.5.4'
+gem 'pg', '~> 1.5', '>= 1.5.6'
 # Puma is a simple, fast, threaded, and highly parallel HTTP 1.1 server for Ruby/Rack applications (https://puma.io)
-gem 'puma', '~> 6.4'
+gem 'puma', '~> 6.4', '>= 6.4.2'
 # Abort requests that are taking too long (https://github.com/sharpstone/rack-timeout)
 gem 'rack-timeout', '~> 0.6.3'
 # Web-application framework for database-backed web applications following the MVC pattern.
-gem 'rails', '~> 7.1', '>= 7.1.2'
+gem 'rails', '~> 7.1', '>= 7.1.3.2'
 # Use Redis for Action Cable
-gem 'redis', '~> 5.0', '>= 5.0.8'
+gem 'redis', '~> 5.2'
 # Reports exceptions to Rollbar (https://rollbar.com)
-gem 'rollbar', '~> 3.4', '>= 3.4.2'
+gem 'rollbar', '~> 3.5', '>= 3.5.2'
 # Automatic Rails code style checking tool. (https://github.com/rubocop/rubocop-rails)
-gem 'rubocop-rails', '~> 2.23', '>= 2.23.1'
+gem 'rubocop-rails', '~> 2.24', '>= 2.24.1'
 # Generate seeds data for your Ruby application. (http://github.com/james2m/seedbank)
 gem 'seedbank', '~> 0.5.0'
 # Simple, efficient background processing for Ruby. (https://github.com/mperham/sidekiq)
-gem 'sidekiq', '~> 7.2'
+gem 'sidekiq', '~> 7.2', '>= 7.2.2'
 # Forms made easy! (https://github.com/heartcombo/simple_form)
 gem 'simple_form', '~> 5.3'
 # Slim templates generator for Rails (https://github.com/slim-template/slim-rails)
@@ -41,21 +41,21 @@ gem 'slim-rails', '~> 3.6', '>= 3.6.3'
 # Sprockets Rails integration (https://github.com/rails/sprockets-rails)
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
 # A modest JavaScript framework for the HTML you already have. (https://stimulus.hotwired.dev)
-gem 'stimulus-rails', '~> 1.3'
+gem 'stimulus-rails', '~> 1.3', '>= 1.3.3'
 # utility-first CSS framework (https://github.com/rails/tailwindcss-rails)
-gem 'tailwindcss-rails', '~> 2.1'
+gem 'tailwindcss-rails', '~> 2.4'
 # The speed of a single-page web application without having to write any JavaScript. (https://github.com/hotwired/turbo-rails)
-gem 'turbo-rails', '~> 1.5'
+gem 'turbo-rails', '~> 2.0', '>= 2.0.5'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # View components for Rails (https://github.com/github/view_component)
-gem 'view_component', '~> 3.8'
+gem 'view_component', '~> 3.12', '>= 3.12.1'
 
 group :staging, :development, :test do
   # factory_bot_rails provides integration between factory_bot and rails 5.0 or newer (https://github.com/thoughtbot/factory_bot_rails)
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
   # Easily generate fake data (https://github.com/faker-ruby/faker)
-  gem 'faker', '~> 3.2', '>= 3.2.2'
+  gem 'faker', '~> 3.3', '>= 3.3.1'
 end
 
 group :development do
@@ -66,37 +66,37 @@ group :development do
   # Better error page for Rails and other Rack apps (https://github.com/BetterErrors/better_errors)
   gem 'better_errors', '~> 2.10', '>= 2.10.1'
   # help to kill N+1 queries and unused eager loading. (https://github.com/flyerhzm/bullet)
-  gem 'bullet', '~> 7.1', '>= 7.1.4'
+  gem 'bullet', '~> 7.1', '>= 7.1.6'
   # Preview mail in browser instead of sending. (http://github.com/ryanb/letter_opener)
-  gem 'letter_opener', '~> 1.8', '>= 1.8.1'
+  gem 'letter_opener', '~> 1.10'
   # Retrieve the binding of a method's caller, or further up the stack.Used by Better Errors. (https://github.com/banister/binding_of_caller)
-  gem 'binding_of_caller', '~> 1.0'
+  gem 'binding_of_caller', '~> 1.0', '>= 1.0.1'
 end
 
 group :development, :test do
   # Checks for vulnerable versions of gems in Gemfile.lock. (https://github.com/rubysec/bundler-audit#readme)
   gem 'bundler-audit', '~> 0.9.1'
   # Examines Ruby classes, modules and methods and reports any Code Smells it finds (https://github.com/troessner/reek)
-  gem 'reek', '~> 6.1', '>= 6.1.4'
+  gem 'reek', '~> 6.3'
   # RSpec testing platform for Rails (https://github.com/rspec/rspec-rails)
-  gem 'rspec-rails', '~> 6.1'
+  gem 'rspec-rails', '~> 6.1', '>= 6.1.2'
   # A Rails application preloader, keeping the application running in the background. (https://github.com/rails/spring)
-  gem 'spring', '~> 4.1', '>= 4.1.3'
+  gem 'spring', '~> 4.2'
   # Makes Spring watch the filesystem for changes using Listen rather than by polling the filesystem. (https://github.com/jonleighton/spring-watcher-listen)
   gem 'spring-watcher-listen', '~> 2.1'
 end
 
 group :test do
   # Acceptance test framework for web applications (https://github.com/teamcapybara/capybara)
-  gem 'capybara', '~> 3.39', '>= 3.39.2'
+  gem 'capybara', '~> 3.40'
   # Brings back `assigns` and `assert_template` to your Rails tests (https://github.com/rails/rails-controller-testing)
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   # Simple one-liner tests for common Rails functionality (https://matchers.shoulda.io/)
-  gem 'shoulda-matchers', '~> 6.0'
+  gem 'shoulda-matchers', '~> 6.2'
   # Code coverage for Ruby (https://github.com/simplecov-ruby/simplecov)
   gem 'simplecov', '~> 0.22.0'
   # Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests. (https://relishapp.com/vcr/vcr/docs)
   gem 'vcr', '~> 6.2'
   # Library for stubbing HTTP requests in Ruby. (http://github.com/bblimke/webmock)
-  gem 'webmock', '~> 3.19', '>= 3.19.1'
+  gem 'webmock', '~> 3.23'
 end
