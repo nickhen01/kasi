@@ -1,0 +1,7 @@
+.card {
+  @apply shadow-md ring-1 ring-stone-900/5 rounded-md bg-white;
+}
+
+.card__border {
+  @apply border ring-1 ring-stone-900/5 rounded-md bg-white;
+}

@@ -62,7 +62,7 @@ configs = <<-RUBY
 config.active_job.queue_adapter = :sidekiq
 RUBY
 environment configs
-append_file 'config/routes.rb', <<-RUBY
+prepend_to_file 'config/routes.rb', <<-RUBY
 require "sidekiq/web"
 RUBY
 route "mount Sidekiq::Web => '/sidekiq'"
@@ -119,7 +119,7 @@ after_bundle do
   # Tailwind
   run './bin/rails tailwindcss:install'
   run 'rm app/assets/stylesheets/application.css'
-  create_file 'app/assets/tailwind_stylesheets/.keep'
+  directory 'configurations/tailwind/tailwind_stylesheets', 'app/assets/tailwind_stylesheets'
   inject_into_file 'config/tailwind.config.js', after: "content: [\n" do <<-JAVASCRIPT
     './app/**/*.{html,js,erb,slim,haml,rb}',
     './config/initializers/**/*.{rb,erb,haml,html,slim}',
@@ -138,6 +138,7 @@ after_bundle do
   # Simple form
   generate('simple_form:install')
   copy_file 'configurations/scaffold/_form.html.slim', 'lib/templates/slim/scaffold/_form.html.slim'
+  copy_file 'configurations/simple_form/simple_form.rb', 'config/initializers/simple_form.rb', force: true
 
   # Rollbar
   generate('rollbar')

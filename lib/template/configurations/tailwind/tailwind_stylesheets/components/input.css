@@ -1,0 +1,19 @@
+.input {
+  @apply block w-full border-0 text-gray-900 sm:text-sm sm:leading-6 rounded-md py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600;
+}
+
+.input-error {
+  @apply text-red-500 text-sm mt-1;
+}
+
+.checkbox {
+  @apply border rounded-full py-1 px-2 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none;
+}
+
+input[type="checkbox"]:checked + label.checkbox {
+  @apply bg-indigo-100 border-indigo-200 text-indigo-700;
+}
+
+input[type="checkbox"]:not(:checked) + label.checkbox {
+  @apply bg-gray-50 text-gray-600 border-transparent;
+}
