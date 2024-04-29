@@ -16,7 +16,8 @@ copy_file 'configurations/Procfile.dev', 'Procfile.dev'
 
 # Layout
 run 'rm app/views/layouts/application.html.erb'
-copy_file 'configurations/application.html.slim', 'app/views/layouts/application.html.slim'
+copy_file 'configurations/layouts/application.html.slim', 'app/views/layouts/application.html.slim'
+copy_file 'configurations/layouts/_head.html.slim', 'app/views/layouts/_head.html.slim'
 
 # README
 copy_file 'configurations/README.md', 'README.md', force: true
@@ -47,17 +48,9 @@ end
 production = <<-RUBY
   # Mailer ====================================================================
   config.action_mailer.asset_host = Rails.application.credentials.dig(:production, :asset_host)
-  config.action_mailer.default_url_options = {
-    host: Rails.application.credentials.dig(:production, :app_host)
-  }
-  config.action_mailer.tap do |mailer|
-    mailer.smtp_settings = Rails.application.credentials.dig(:production, :smtp_settings)
-    mailer.delivery_method = :smtp
-  end
+  config.action_mailer.default_url_options = { host: Rails.application.credentials.dig(:production, :app_host) }
 
-  routes.default_url_options = {
-    host: Rails.application.credentials.dig(:production, :app_host)
-  }
+  routes.default_url_options = { host: Rails.application.credentials.dig(:production, :asset_host) }
 RUBY
 environment(nil, env: 'production') do
   production
@@ -69,6 +62,10 @@ configs = <<-RUBY
 config.active_job.queue_adapter = :sidekiq
 RUBY
 environment configs
+append_file 'config/routes.rb', <<-RUBY
+require "sidekiq/web"
+RUBY
+route "mount Sidekiq::Web => '/sidekiq'"
 
 # Generators
 generators = <<-RUBY
@@ -211,30 +208,9 @@ end
       gem 'pundit', "~> 2.2"
       run 'bundle install'
       generate('pundit:install')
-
+      copy_file 'configurations/pundit/authorize.rb', 'app/controllers/concerns/authorize.rb'
       inject_into_class 'app/controllers/application_controller.rb', 'ApplicationController' do <<-RUBY
-  include Pundit::Authorization
-      RUBY
-      end
-
-      inject_into_file 'app/controllers/application_controller.rb', after: "before_action :authenticate_user!\n" do <<-RUBY
-
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-
-  private
-
-  def user_not_authorized
-    respond_to do |format|
-      format.html do
-        flash[:alert] = 'You are not authorized to perform this action !'
-        redirect_to root_path
-      end
-
-      format.json do
-        render json: { errors: 'Unauthorized access' }, status: 403
-      end
-    end
-  end
+  include Authorize
       RUBY
       end
 
