@@ -13,5 +13,6 @@
 .pagy > a:not([href]) {
   @apply text-gray-300 bg-gray-100 cursor-default;
   &.current {
-    @apply text-white bg-gray-400;}
+    @apply text-white bg-gray-400;
+  }
 }
