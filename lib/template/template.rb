@@ -126,6 +126,13 @@ after_bundle do
   JAVASCRIPT
   end
 
+  # Icons
+  directory 'configurations/icons', 'app/assets/icons'
+  prepend_to_file 'app/assets/config/manifest.js' do <<-JAVASCRIPT
+//= link_tree ../icons
+  JAVASCRIPT
+  end
+
   # Bin/dev
   copy_file 'configurations/dev', 'bin/dev', force: true
 
