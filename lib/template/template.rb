@@ -242,7 +242,7 @@ require 'pundit/rspec'
 
   # JS notifications (for flash)
   run './bin/importmap pin notifications'
-  inject_into_file 'javascript/controllers/application.js', after: "const application = Application.start()\n" do <<-JAVASCRIPT
+  inject_into_file 'app/javascript/controllers/application.js', after: "const application = Application.start()\n" do <<-JAVASCRIPT
 import Notification from "stimulus-notification"
 application.register("notification", Notification)
   JAVASCRIPT
