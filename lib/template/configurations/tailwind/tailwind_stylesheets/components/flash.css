@@ -1,0 +1,15 @@
+.flash_bg__notice {
+  @apply bg-green-200;
+}
+
+.flash_bg__alert {
+  @apply bg-red-200;
+}
+
+.flash_text__notice {
+  @apply text-green-400;
+}
+
+.flash_text__alert {
+  @apply text-red-400;
+}

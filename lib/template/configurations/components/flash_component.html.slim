@@ -1,0 +1,16 @@
+- keys.each do |key|
+  .fixed.inset-0.flex.items-end.px-4.py-6.pointer-events-none.sm:p-6.z-40 data-controller="notification" data-notification-delay-value="5000"
+    .w-full.flex.flex-col.items-center.space-y-4.sm:items-end
+      .max-w-sm.w-full.shadow-lg.pointer-events-auto.ring-1.ring-black.ring-opacity-5.overflow-hidden.rounded-lg class=background_modifier(key)
+        .p-4
+          .flex.items-start
+            .flex-shrink-0
+              = inline_svg_tag icon(key), class: "h-6 w-6 #{text_modifier(key)}"
+            .ml-3.w-0.flex-1.pt-0.5
+              p.text-sm.font-medium.text-stone-900
+                = message(key)
+            .ml-4.flex-shrink-0.flex
+              button.inline-flex.text-stone-900.hover:text-stone-600.rounded-lg data-action="notification#hide"
+                span.sr-only
+                  | Close
+                = inline_svg_tag "outline/x-mark.svg", class: 'h-5 w-5'
